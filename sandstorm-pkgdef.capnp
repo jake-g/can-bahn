@@ -19,7 +19,7 @@ const pkgdef :Spk.PackageDefinition = (
     # This manifest is included in our app package to tell Sandstorm about our
     # app.
 
-    appTitle = (defaultText = "Wekan"),
+    appTitle = (defaultText = "can-bahn"),
     # The name of the app as it is displayed to the user.
 
     appVersion = 20,
@@ -51,15 +51,7 @@ const pkgdef :Spk.PackageDefinition = (
     # case.
 
     metadata = (
-      icons = (
-        appGrid = (svg = embed "meta/icons/wekan-128.svg"),
-        grain = (svg = embed "meta/icons/wekan-24.svg"),
-        market = (svg = embed "meta/icons/wekan-150.svg"),
-      ),
 
-      website = "https://wekan.github.io",
-      codeUrl = "https://github.com/wekan/wekan",
-      license = (openSource = mit),
       categories = [productivity, office],
 
       author = (
