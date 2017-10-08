@@ -13,3 +13,16 @@ package-lock.json
 **/stage
 **/prime
 **/*.snap
+
+snap-src/
+snap/
+snapcraft.ymal\
+sandstorm.js
+sandstorm-*
+scalingo.json
+public/wekan*
+i18n/
+.tx/
+.vscode/
+Contributing.md
+.github/

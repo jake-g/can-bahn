@@ -2,25 +2,27 @@ version: '2'
 
 services:
 
-  wekandb:
+  can-bahndb:
     image: mongo:3.2.15
-    container_name: wekan-db
+    container_name: can-bahn-db
     restart: always
     command: mongod --smallfiles --oplogSize 128
     networks:
-      - wekan-tier
+      - can-bahn-tier
+    ports:
+      - 27017:27017
     expose:
       - 27017
     volumes:
-      - wekan-db:/data/db
-      - wekan-db-dump:/dump
+      - can-bahn-db:/data/db
+      - can-bahn-db-dump:/dump
 
-  wekan:
+  can-bahn:
     image: wekanteam/wekan:latest
-    container_name: wekan-app
+    container_name: can-bahn-app
     restart: always
     networks:
-      - wekan-tier
+      - can-bahn-tier
     build:
       context: .
       dockerfile: Dockerfile
@@ -33,19 +35,20 @@ services:
         - METEOR_EDGE=${METEOR_EDGE}
         - USE_EDGE=${USE_EDGE}
     ports:
-      - 80:80
+      - 8080:80
+      - 27017:27017
     environment:
-      - MONGO_URL=mongodb://wekandb:27017/wekan
-      - ROOT_URL=http://localhost
+      - MONGO_URL=mongodb://can-bahndb:27017/can-bahn
+      - ROOT_URL=http://john-deep.asuscomm:8080
     depends_on:
-      - wekandb
+      - can-bahndb
 
 volumes:
-  wekan-db:
+  can-bahn-db:
     driver: local
-  wekan-db-dump:
+  can-bahn-db-dump:
     driver: local
 
 networks:
-  wekan-tier:
+  can-bahn-tier:
     driver: bridge
