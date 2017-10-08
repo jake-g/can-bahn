@@ -9,6 +9,8 @@ services:
     command: mongod --smallfiles --oplogSize 128
     networks:
       - can-bahn-tier
+    ports:
+      - 27017:27017
     expose:
       - 27017
     volumes:
@@ -34,9 +36,10 @@ services:
         - USE_EDGE=${USE_EDGE}
     ports:
       - 8080:80
+      - 27017:27017
     environment:
       - MONGO_URL=mongodb://can-bahndb:27017/can-bahn
-      - ROOT_URL=http://localhost
+      - ROOT_URL=http://john-deep.asuscomm:8080
     depends_on:
       - can-bahndb
 
