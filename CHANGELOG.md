@@ -1,4 +1,152 @@
-# Upcoming Wekan release
+# v0.47 2017-10-04 Wekan release
+
+This release adds the following new features:
+
+* [Use theme color for Slider for Comments only](https://github.com/wekan/wekan/pull/1275).
+
+Thanks to Github user nztqa for contributions.
+
+# v0.46 2017-10-03 Wekan release
+
+This release adds the following new features:
+
+* [Webhook parameters and response order](https://github.com/wekan/wekan/pull/1263).
+
+and fixes the following bugs:
+
+* SECURITY FIX: [Meteor allow/deny](https://blog.meteor.com/meteor-allow-deny-vulnerability-disclosure-baf398f47b25) fixed
+  [here](https://github.com/wekan/wekan/commit/c3804dc0fad0817285460d86dc1b3bdc96361f49);
+* [Fix: Slider for Comments only does not work correctly with over 21 activities](https://github.com/wekan/wekan/pull/1247).
+
+Thanks to Github users andresmanelli and nztqa for their contributions.
+
+# v0.45 2017-10-01 Wekan release
+
+This release adds the following new features:
+
+* [Slider for Comments only in activity feed](https://github.com/wekan/wekan/issues/1247);
+* [Site Wide Announcement](https://github.com/wekan/wekan/pull/1260).
+
+and fixes the following bugs:
+
+* [Data inconsistency when copying card](https://github.com/wekan/wekan/pull/1246). Note: There is no feature for copying card attachment yet;
+* [Hide create label from normal users, because only board admin can create labels](https://github.com/wekan/wekan/pull/1261).
+
+Thanks to Github user nztqa for contributions.
+
+# v0.44 2017-09-30 Wekan release
+
+This release adds the following new features:
+
+* [Confirm popup appears before Checklist Delete](https://github.com/wekan/wekan/pull/1257).
+
+and fixes the following bugs:
+
+* [Fix errors when importing from Trello](https://github.com/wekan/wekan/pull/1259).
+
+Thanks to GitHub users amadilsons and GhassenRjab for their contributions.
+
+# v0.43 2017-09-25 Wekan release
+
+This release fixes the following bugs:
+
+* [Add emojis back, because removing them broke local dev Sandstorm](https://github.com/wekan/wekan/issues/1248).
+
+Thanks to GitHub user xet7 for contributions.
+
+# v0.42 2017-09-25 Wekan release
+
+This release fixes the following bugs:
+
+* [Remove emoji support, because it breaks MAC addresses, urls, code etc](https://github.com/wekan/wekan/issues/1248).
+
+Thanks to GitHub user xet7 for contributions.
+
+# v0.41 2017-09-25 Wekan release
+
+This release fixes the following bugs:
+
+* [Can't create user and login after install. Reverting REST API: Create user despite disabling registration](https://github.com/wekan/wekan/issues/1249).
+
+Thanks to GitHub user xet7 for contributions.
+
+# v0.40 2017-09-25 Wekan release
+
+This release adds the following new features:
+
+* [Add translations (en/de/fi) for email notifications regarding checklists and checklist
+   items](https://github.com/wekan/wekan/pull/1238);
+* [Added plus button to add card on top of the list](https://github.com/wekan/wekan/pull/1244);
+* [REST API: Create user despite disabling registration](https://github.com/wekan/wekan/issues/1232).
+
+and fixes the following bugs:
+
+* [Checklist items are lost when moving items to another checklist](https://github.com/wekan/wekan/pull/1240);
+* [Keep state of checklist items when moved to another checklist](https://github.com/wekan/wekan/pull/1242).
+
+Thanks to GitHub users GhassenRjab, mario-orlicky, soohwa, umbertooo and xet7 for their contributions.
+
+# v0.39 2017-09-18 Wekan release
+
+This release adds the following new features:
+
+* [Import checklist sort attributes from Wekan and Trello](https://github.com/wekan/wekan/pull/1226).
+
+Thanks to GitHub user GhassenRjab for contributions.
+
+# v0.38 2017-09-14 Wekan release
+
+This release adds the following new features:
+
+* [Reorder checklists. Move checklist item to another checklist.](https://github.com/wekan/wekan/pull/1215);
+* [Card title is now pre-filled in copy card dialog](https://github.com/wekan/wekan/pull/1214).
+
+Thanks to GitHub user frmwrk123 for contributions.
+
+# v0.37 2017-09-09 Wekan release
+
+This release adds the following new features:
+
+* [Copy card within one board](https://github.com/wekan/wekan/pull/1204).
+
+Thanks to GitHub user frmwrk123 for contributions.
+
+# v0.36 2017-09-02 Wekan release
+
+This release adds the following new features:
+
+* [Import attachments related activities from Wekan and
+   Trello](https://github.com/wekan/wekan/pull/1202).
+
+Thanks to GitHub user GhassenRjab for contributions.
+
+# v0.35 2017-09-02 Wekan release
+
+This release adds the following new features:
+
+* [Add more than one Outgoing Webhook](https://github.com/wekan/wekan/pull/1199).
+
+and fixes the following bugs:
+
+* [Fix errors caused by checklist items activities](https://github.com/wekan/wekan/pull/1200).
+
+Thanks to GitHub users andresmanelli, GhassenRjab and nztqa for contributions.
+
+# v0.34 2017-08-30 Wekan release
+
+This release adds the following new features:
+
+* [Import Trello and Wekan board times of creation of activities](https://github.com/wekan/wekan/pull/1187);
+* Newest Wekan is available at Sandstorm App Market.
+
+Known issues:
+
+* [Attachment creation times are not imported to Trello and Wekan](https://github.com/wekan/wekan/issues/1157).
+  - This is fixed in v0.36.
+
+Thanks to GitHub user GhassenRjab for contributions.
+
+# v0.33 2017-08-29 Wekan release
 
 This release adds the following new features:
 
@@ -17,9 +165,10 @@ and fixes the following bugs:
 
 * [Fix Squeezed tickbox in Card](https://github.com/wekan/wekan/pull/1171);
 * [Percent-encode SMTP password to prevent URI malformed
-   errors](https://github.com/wekan/wekan/pull/1190).
+   errors](https://github.com/wekan/wekan/pull/1190);
+* [Fix Wekan Import Export on Standalone and Sandstorm](https://github.com/wekan/wekan/pull/1197).
 
-Thanks to GitHub users andresmanelli, danhawkes, jonasob, kubiko, nztqa,
+Thanks to GitHub users andresmanelli, danhawkes, GhassenRjab, jonasob, kubiko, nztqa,
 pkuhner and xet7 for their contributions.
 
 # v0.32 2017-07-30 Wekan release

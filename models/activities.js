@@ -110,6 +110,7 @@ if (Meteor.isServer) {
     if (activity.commentId) {
       const comment = activity.comment();
       params.comment = comment.text;
+      params.commentId = comment._id;
     }
     if (activity.attachmentId) {
       const attachment = activity.attachment();
@@ -118,6 +119,10 @@ if (Meteor.isServer) {
     if (activity.checklistId) {
       const checklist = activity.checklist();
       params.checklist = checklist.title;
+    }
+    if (activity.checklistItemId) {
+      const checklistItem = activity.checklistItem();
+      params.checklistItem = checklistItem.title;
     }
     if (board) {
       const watchingUsers = _.pluck(_.where(board.watchers, {level: 'watching'}), 'userId');
@@ -140,9 +145,9 @@ if (Meteor.isServer) {
       Notifications.notify(user, title, description, params);
     });
 
-    const integration = Integrations.findOne({ boardId: board._id, type: 'outgoing-webhooks', enabled: true });
-    if (integration) {
-      Meteor.call('outgoingWebhooks', integration, description, params);
+    const integrations = Integrations.find({ boardId: board._id, type: 'outgoing-webhooks', enabled: true, activities: { '$in': [description, 'all'] } }).fetch();
+    if (integrations.length > 0) {
+      Meteor.call('outgoingWebhooks', integrations, description, params);
     }
   });
 }
